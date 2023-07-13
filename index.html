@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./src/assets/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Tasks!</title>
+  </head>
+  <body
+    class="has-background-dark is-flex is-align-items-center is-flex-direction-column"
+  >
+    <header
+      class="header p-4 is-flex is-justify-content-space-between is-align-items-center has-background-black"
+    >
+      <div class="logo is-flex is-align-items-center is-justify-content-center">
+        <ion-icon
+          class="is-size-2 has-text-primary"
+          name="checkmark-done-circle-outline"
+        ></ion-icon>
+        <p class="titleHeader title is-4 has-text-link-light">Tasks!</p>
+      </div>
+
+      <form id="form" class="inputArea">
+        <input
+          id="input"
+          class="input is-primary"
+          type="text"
+          placeholder="Digite aqui sua tarefa"
+          autocomplete="off"
+        />
+      </form>
+
+      <!--  <div class="chooseTheme control">
+        <label for="dark">
+          <input type="radio" name="toggle" id="dark" />
+        </label>
+        <label for="light">
+          <input type="radio" name="toggle" id="light" />
+        </label>
+      </div> -->
+    </header>
+    <main id="main" class="panel is-black">
+      <ul id="tasks" class="tasks"></ul>
+    </main>
+    <footer>
+      <a href="https://carloscunha611.github.io/portfolio/" target="_blank">
+        <img
+          class="logoC"
+          src="./src/assets/logoC.png"
+          alt="Logo do Portfólio"
+        />
+      </a>
+      <div>
+        <p>
+          Dev. by <span>C</span>arlos <span>C</span>unha <span>Jr</span>. &copy;
+          2023
+        </p>
+      </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="./src/main.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

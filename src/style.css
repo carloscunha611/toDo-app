@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+}
+
+:root {
+  --color-primary: #00d1b2;
+
+  --color-black: #0a0a0a;
+  --color-black08: #0a0a0acc;
+
+  --color-dark: #363636;
+  --color-dark08: #363636cc;
+
+  --color-font1: #f5f5f5;
+  --color-fontP: #f5f5f593;
+}
+
+body {
+  height: 60rem;
+  gap: 5rem;
+}
+header {
+  width: 100%;
+}
+header .logo {
+  min-width: 8rem;
+  user-select: none;
+}
+
+header .inputArea input {
+  position: absolute;
+  top: 8rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20rem;
+  background: var(--color-dark08);
+  color: var(--color-font1);
+}
+
+header .inputArea input::placeholder {
+  font-weight: 500;
+  color: var(--color-fontP);
+}
+
+header .chooseTheme {
+  width: 6rem;
+}
+header .chooseTheme .radio {
+  text-align: center;
+  width: 2rem;
+}
+.radio ion-icon:hover {
+  color: var(--color-primary);
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+header .chooseTheme .radio input {
+  display: none;
+  width: 0;
+}
+
+main {
+  margin-top: 4rem;
+  width: 100%;
+}
+
+main .tasks li {
+  gap: 2rem;
+  text-align: justify;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: var(--color-black08);
+}
+
+main .tasks li.completed .tasksEl {
+  text-decoration: line-through;
+}
+
+main .tasks li .trash {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 4rem;
+  height: 4rem;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 0.5rem;
+}
+main .tasks li .trash::after {
+  content: '';
+  position: relative;
+  bottom: 1.5rem;
+  background: url(./assets/holdred1.png) center/cover no-repeat;
+  object-fit: contain;
+  width: 1rem;
+  height: 2rem;
+}
+main .tasks li .trash span {
+  position: relative;
+  top: 75%;
+}
+
+@media (min-width: 1080px) {
+  main .tasks li .trash {
+    justify-content: space-around;
+    gap: 0;
+  }
+  main .tasks li .trash::after {
+    background: url(./assets/mousered1.png) center/cover no-repeat;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  main .tasks li .trash span {
+    position: relative;
+    top: 75%;
+  }
+}
