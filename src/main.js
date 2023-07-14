@@ -80,12 +80,59 @@ function updateLocalStorage() {
   localStorage.setItem('tasks', JSON.stringify(tasks))
 }
 
-const chooseTheme = document.querySelector('.chooseTheme')
-chooseTheme.addEventListener('click', () => {
-  const classBody = document.body.classList
-  classBody.toggle(
-    classBody.contains('has-background-dark')
-      ? 'has-background-light'
-      : 'has-background-dark'
+const button = document.querySelector('.button')
+
+button.addEventListener('click', () => {
+  const currentIcon = button.innerHTML
+  const light =
+    '<span class="light icon is-small"><ion-icon name="sunny-sharp"></ion-icon></span>'
+  const dark =
+    '<span class="dark icon is-small"><ion-icon name="moon-sharp"></ion-icon></span>'
+  const header = document.querySelector('.header')
+  const titleHeader = document.querySelector('.titleHeader')
+  const checkLogo = document.querySelector('.checkLogo')
+  const linkPort = document.querySelector('.linkPort')
+  const footer = document.querySelector('#footer')
+
+  if (currentIcon.includes('sunny-sharp')) {
+    button.innerHTML = dark
+    document.body.classList.add('has-background-dark')
+    document.body.classList.remove('has-background-light')
+
+    button.classList.add('is-black', 'has-text-primary')
+    button.classList.remove('is-light')
+
+    header.classList.add('has-background-black')
+    header.classList.remove('has-background-grey-light')
+    footer.classList.add('has-background-black')
+    footer.classList.remove('has-background-grey-light')
+
+    checkLogo.classList.add('has-text-primary')
+    checkLogo.classList.remove('has-text-dark')
+    titleHeader.classList.add('has-text-white-ter')
+    titleHeader.classList.remove('has-text-dark')
+  } else {
+    button.innerHTML = light
+    document.body.classList.add('has-background-light')
+    document.body.classList.remove('has-background-dark')
+
+    button.classList.add('is-light')
+    button.classList.remove('is-black', 'has-text-primary')
+
+    header.classList.add('has-background-grey-light')
+    header.classList.remove('has-background-black')
+    footer.classList.add('has-background-grey-light')
+    footer.classList.remove('has-background-black')
+
+    checkLogo.classList.add('has-text-dark')
+    checkLogo.classList.remove('has-text-primary')
+    titleHeader.classList.add('has-text-dark')
+    titleHeader.classList.remove('has-text-white-ter')
+  }
+
+  linkPort.classList.toggle(
+    linkPort.classList.contains('has-text-primary')
+      ? `has-text-danger`
+      : `has-text-primary`
   )
 })

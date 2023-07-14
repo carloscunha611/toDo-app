@@ -17,54 +17,53 @@
     <title>Tasks!</title>
   </head>
   <body
-    class="has-background-dark is-flex is-align-items-center is-flex-direction-column"
+    class="has-background-dark is-flex is-align-items-center is-flex-direction-column is-justify-content-space-between"
   >
     <header
       class="header p-4 is-flex is-justify-content-space-between is-align-items-center has-background-black"
     >
       <div class="logo is-flex is-align-items-center is-justify-content-center">
         <ion-icon
-          class="is-size-2 has-text-primary"
+          class="checkLogo is-size-2 has-text-primary"
           name="checkmark-done-circle-outline"
         ></ion-icon>
-        <p class="titleHeader title is-4 has-text-link-light">Tasks!</p>
+        <p class="titleHeader title is-4 has-text-white-ter">Tasks!</p>
       </div>
 
-      <form id="form" class="inputArea">
-        <input
-          id="input"
-          class="input is-primary"
-          type="text"
-          placeholder="Digite aqui sua tarefa"
-          autocomplete="off"
-        />
-      </form>
+      <div class="formArea">
+        <form id="form" class="inputArea">
+          <input
+            id="input"
+            class="input is-primary"
+            type="text"
+            placeholder="Digite aqui sua tarefa"
+            autocomplete="off"
+          />
+        </form>
+      </div>
 
-      <!--  <div class="chooseTheme control">
-        <label for="dark">
-          <input type="radio" name="toggle" id="dark" />
-        </label>
-        <label for="light">
-          <input type="radio" name="toggle" id="light" />
-        </label>
-      </div> -->
+      <p class="buttons">
+        <button class="button is-small is-black has-text-primary">
+          <span class="dark icon is-small">
+            <ion-icon name="moon-sharp"></ion-icon>
+          </span>
+        </button>
+      </p>
     </header>
-    <main id="main" class="panel is-black">
+    <main id="main" class="panel">
       <ul id="tasks" class="tasks"></ul>
     </main>
-    <footer>
-      <a href="https://carloscunha611.github.io/portfolio/" target="_blank">
-        <img
-          class="logoC"
-          src="./src/assets/logoC.png"
-          alt="Logo do Portfólio"
-        />
-      </a>
-      <div>
-        <p>
-          Dev. by <span>C</span>arlos <span>C</span>unha <span>Jr</span>. &copy;
-          2023
-        </p>
+
+    <footer id="footer" class="footer has-background-black">
+      <div class="content has-text-centered">
+        <p>Dev. by <strong>Carlos Cunha Jr</strong>. &copy; 2023</p>
+        Acesse o meu
+        <a
+          class="linkPort has-text-primary"
+          href="https://carloscunha611.github.io/portfolio/"
+          target="_blank"
+          >portfólio</a
+        >
       </div>
     </footer>
     <!-- Scripts -->

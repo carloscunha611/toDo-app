@@ -8,6 +8,7 @@
 
 :root {
   --color-primary: #00d1b2;
+  --color-primary08: #00d1b2cc;
 
   --color-black: #0a0a0a;
   --color-black08: #0a0a0acc;
@@ -19,53 +20,82 @@
   --color-fontP: #f5f5f593;
 }
 
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--color-black08);
+  border-radius: 0.1rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary08);
+  border-radius: 0.1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-primary);
+}
+
 body {
-  height: 60rem;
+  min-height: 100vh;
   gap: 5rem;
 }
 header {
   width: 100%;
+  margin-bottom: 2.5rem;
 }
 header .logo {
   min-width: 8rem;
   user-select: none;
+  gap: 0.2rem;
 }
 
-header .inputArea input {
+.formArea {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   top: 8rem;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
+  height: 8rem;
+}
+
+header .inputArea input {
   width: 20rem;
+  height: 2.5rem;
   background: var(--color-dark08);
   color: var(--color-font1);
 }
 
+.inputArea input::selection {
+  background: var(--color-primary);
+}
 header .inputArea input::placeholder {
   font-weight: 500;
   color: var(--color-fontP);
 }
 
-header .chooseTheme {
-  width: 6rem;
-}
-header .chooseTheme .radio {
-  text-align: center;
-  width: 2rem;
-}
 .radio ion-icon:hover {
   color: var(--color-primary);
   transition: all 0.3s ease-in-out;
   transform: scale(1.1);
 }
-header .chooseTheme .radio input {
-  display: none;
-  width: 0;
+header button:hover {
+  transform: scale(1.1);
+}
+header .dark,
+header .light {
+  font-size: 1.2rem;
 }
 
 main {
-  margin-top: 4rem;
   width: 100%;
+  min-height: 22.5rem;
+  background: url(./assets/bg-main.png) center/cover no-repeat;
+  border: 2px solid var(--color-primary);
+  overflow: hidden;
 }
 
 main .tasks li {
@@ -74,6 +104,10 @@ main .tasks li {
   font-size: 1.5rem;
   cursor: pointer;
   background: var(--color-black08);
+}
+
+.tasks li p::selection {
+  background: var(--color-primary);
 }
 
 main .tasks li.completed .tasksEl {
@@ -96,7 +130,7 @@ main .tasks li .trash::after {
   content: '';
   position: relative;
   bottom: 1.5rem;
-  background: url(./assets/holdred1.png) center/cover no-repeat;
+  background: url(./assets/holdred.png) center/cover no-repeat;
   object-fit: contain;
   width: 1rem;
   height: 2rem;
@@ -106,13 +140,40 @@ main .tasks li .trash span {
   top: 75%;
 }
 
-@media (min-width: 1080px) {
+footer {
+  width: 100%;
+  max-height: 4rem;
+}
+
+@media (min-width: 1280px) {
+  .formArea {
+    position: relative;
+    top: 0rem;
+    left: 0%;
+    transform: translate(0%, 0%);
+    width: auto;
+    height: 2.5rem;
+  }
+
+  header .inputArea input {
+    width: 60rem;
+    height: 2.5rem;
+    background: var(--color-dark08);
+    color: var(--color-font1);
+  }
+
+  main {
+    position: relative;
+    top: -5rem;
+    width: 90%;
+    min-height: 28rem;
+  }
   main .tasks li .trash {
     justify-content: space-around;
     gap: 0;
   }
   main .tasks li .trash::after {
-    background: url(./assets/mousered1.png) center/cover no-repeat;
+    background: url(./assets/mousered.png) center/cover no-repeat;
     width: 1.5rem;
     height: 1.5rem;
   }
